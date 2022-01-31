@@ -23,12 +23,14 @@ public class AppView {
         System.out.print("""
                 --------------------------
                 Выберите опцию:
-                1 - Создать контакты.
+                1 - Добавить контакт.
                 2 - Посмотреть контакты.
+                3 - Обновить телефон контакта.
+                4 - Удалить контакт.
                 0 - Закрыть приложение.
                 """);
 
-        choice = Validator.validateChoice(scanner);
+        choice = Validator.validateOptionInput(scanner);
         model.setChoice(choice);
         option = model.getChoice();
 

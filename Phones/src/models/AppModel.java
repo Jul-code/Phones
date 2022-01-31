@@ -1,11 +1,14 @@
 package models;
 
-import controllers.ContactCreateController;
-import controllers.ContactReadController;
-import views.ContactCreateView;
-import views.ContactReadView;
+import controllers.PhoneCreateController;
+import controllers.PhoneDeleteController;
+import controllers.PhoneReadController;
+import controllers.PhoneUpdateController;
+import views.PhoneAddView;
+import views.PhoneDeleteView;
+import views.PhoneReadView;
+import views.PhoneUpdateView;
 
-// TASK исправьте ошибки компиляции
 public class AppModel {
 
     private int choice;
@@ -18,19 +21,31 @@ public class AppModel {
         this.choice = choice;
     }
 
-    public void addContacts() {
-        ContactCreateModel model = new ContactCreateModel();
-        ContactCreateView view = new ContactCreateView(model);
-        ContactCreateController controller = new ContactCreateController(model, view);
-        controller.addContacts();
+    public void createPhone() {
+        PhoneAddModel model = new PhoneAddModel();
+        PhoneAddView view = new PhoneAddView(model);
+        PhoneCreateController controller = new PhoneCreateController(model, view);
+        controller.addPhone();
     }
 
-    public void readContacts() {
-        // TASK создайте необходимые экземпляры
-        // и исправьте ошибки компиляции
-        ContactReadModel model = new ContactReadModel();
-        ContactReadView view = new ContactReadView(model);
-        ContactReadController controller = new ContactReadController(model, view);
-        controller.getContacts();
+    public void readPhones() {
+        PhoneReadModel model = new PhoneReadModel();
+        PhoneReadView view = new PhoneReadView(model);
+        PhoneReadController controller = new PhoneReadController(model, view);
+        controller.getPhones();
+    }
+
+    public void updatePhone() {
+        PhoneUpdateModel model = new PhoneUpdateModel();
+        PhoneUpdateView view = new PhoneUpdateView(model);
+        PhoneUpdateController controller = new PhoneUpdateController(model, view);
+        controller.updatePhone();
+    }
+
+    public void deletePhone() {
+        PhoneDeleteModel model = new PhoneDeleteModel();
+        PhoneDeleteView view = new PhoneDeleteView(model);
+        PhoneDeleteController controller = new PhoneDeleteController(model, view);
+        controller.deletePhone();
     }
 }

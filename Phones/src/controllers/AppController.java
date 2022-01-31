@@ -20,8 +20,11 @@ public class AppController {
 
     private void filterChoice(int choice) {
         switch (choice) {
-            case 1 -> model.addContacts();
-            case 2 -> model.readContacts();
+            case 1 -> model.createPhone();
+            case 2 -> model.readPhones();
+            case 3 -> model.updatePhone();
+
+            case 4 -> model.deletePhone();
             case 0 -> {
                 String output = Constants.JOB_QUIT_MSG;
                 view.getOutput(output, choice);
